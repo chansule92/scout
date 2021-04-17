@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border=1 align=center>
+  <tr><td align=center><img src="/static/img/실루엣.png" width=222px height=200px><br></div>
+    <br><img src="/static/img/team/{{team.0.1}}.png" width=60px height=60px><img src="/static/img/{{player.position}}.png" width=60px height=60px></div>
+  <br><br>승률 : {{KDA.win_rate|floatformat:2}}%</td><td>
+    <table align=center>
+      <tr><p class="a">{{player.nickname}}</p></tr>
+      <tr class="table-secondary" align=center><td>경기수</td><td>Kill</td><td>Death</td><td>Assist</td><td>KDA</td></tr>
+      <tr align=center><td>{{play_count}}</td><td>{{KDA.total_kill}}</td><td>{{KDA.total_death}}</td><td>{{KDA.total_assist}}</td><td>{{KDA.KDA}}.{{KDA.KDA_2}}</td></tr>
+      <tr class="table-secondary" align=center><td>경기당 평균CS</td><td>분당 CS</td><td>경기당 Gold</td><td>분당 Gold</td><td>팀내 골드비중</td></tr>
+      <tr align=center><td>{{grow.CS|floatformat:2}}</td><td>{{CS_M|floatformat:2}}</td><td>{{grow.gold|floatformat:2}}</td><td>{{Gold_M|floatformat:2}}</td><td>{{GOLDp|floatformat:2}}%</td></tr>
+      <tr class="table-secondary" align=center><td>평균 시야점수</td><td>평균 와드설치</td><td>평균 와드파괴</td><td>평균 컨트롤와드 구매</td></tr>
+      <tr align=center><td>{{vision.vision_scord|floatformat:2}}</td><td>{{vision.wards_place|floatformat:2}}</td><td>{{vision.Wards_destroyed|floatformat:2}}</td><td>{{vision.wards_place|floatformat:2}}</td></tr>
+      <tr class="table-secondary" align=center><td>경기당 평균 딜량</td><td>분당데미지</td><td>팀내 데미지비율</td><td>킬 관여율</td><td>분당 킬/어시스트</td></tr>
+      <tr align=center><td>{{fight.damage|floatformat:2}}</td><td>{{Damage_M|floatformat:2}}</td><td>{{DMGp|floatformat:2}}%</td><td>{{KAp|floatformat:2}}%</td><td>{{KAm|floatformat:2}}</td></tr>
+      <tr class="table-secondary" align=center><td>15분골드 차</td><td>15분CS 차</td><td>15분경험치 차</td><td>15분레벨 차</td></tr>
+      <tr align=center><td>{{line.GD15|floatformat:2}}</td><td>{{line.CSD15|floatformat:2}}</td><td>{{line.XPD15|floatformat:2}}</td><td>{{line.LVLD15|floatformat:2}}</td></tr>
+      <tr class="table-secondary" align=center><td>경기당 CC 횟수</td><td>경기당 받은 데미지</td></tr>
+      <tr align=center><td>{{others.CC|floatformat:2}}</td><td>{{others.taken_damage|floatformat:2}}</td></tr>
+
+    </table>
+
+
+
+
+
+  </td></tr>
+  <tr><td>
+    <table border=0>
+      <th align=center><p class="b">MOST 5</p></th>
+
+      <tr><td align=center><img src="/static/img/champion/{{most.0.0}}.png" width=50px height=50px></td><td>pick  : {{most.0.1}}<br>승률 : {{mo_win.0.win_rate|floatformat:2}}%</td></tr>
+      <tr><td align=center><img src="/static/img/champion/{{most.1.0}}.png" width=50px height=50px></td><td>pick  : {{most.1.1}}<br>승률 : {{mo_win.1.win_rate|floatformat:2}}%</td></tr>
+      <tr><td align=center><img src="/static/img/champion/{{most.2.0}}.png" width=50px height=50px></td><td>pick  : {{most.2.1}}<br>승률 : {{mo_win.2.win_rate|floatformat:2}}%</td></tr>
+      <tr><td align=center><img src="/static/img/champion/{{most.3.0}}.png" width=50px height=50px></td><td>pick  : {{most.3.1}}<br>승률 : {{mo_win.3.win_rate|floatformat:2}}%</td></tr>
+      <tr><td align=center><img src="/static/img/champion/{{most.4.0}}.png" width=50px height=50px></td><td>pick  : {{most.4.1}}<br>승률 : {{mo_win.4.win_rate|floatformat:2}}%</td></tr>    </table>
+  </td><td><table border=0 width=100%><th>팀별 상대전적</th>
+    <tr><td align=center><img src="/static/img/team/Afreeca.png" width=50px height=50px></td><td align=center><img src="/static/img/team/DragonX.png" width=50px height=50px></td><td align=center><img src="/static/img/team/DWG.png" width=50px height=50px></td><td align=center><img src="/static/img/team/FreditBrion.png" width=50px height=50px></td><td align=center><img src="/static/img/team/HLE.png" width=50px height=50px></td></tr>
+    <tr><td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{Afreeca2.0}}</td></tr><td>승리 수</td><td align=center>{{Afreeca2.1}}</td></tr><tr><td>KDA</td><td>{{Afreeca2.2}}/{{Afreeca2.3}}/{{Afreeca2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{DragonX2.0}}</td></tr><td>승리 수</td><td align=center>{{DragonX2.1}}</td></tr><tr><td>KDA</td><td>{{DragonX2.2}}/{{DragonX2.3}}/{{DragonX2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{DWG2.0}}</td></tr><td>Win rate</td><td align=center>{{DWG2.1}}</td></tr><tr><td>KDA</td><td>{{DWG2.2}}/{{DWG2.3}}/{{DWG2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{FreditBrion2.0}}</td></tr><td>Win rate</td><td align=center>{{FreditBrion2.1}}</td></tr><tr><td>KDA</td><td>{{FreditBrion2.2}}/{{FreditBrion2.3}}/{{FreditBrion2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{HLE2.0}}</td></tr><td>Win rate</td><td align=center>{{HLE2.1}}</td></tr><tr><td>KDA</td><td>{{HLE2.2}}/{{HLE2.3}}/{{HLE2.4}}</td></tr></table></td>
+    </tr>
+    <tr><td align=center><img src="/static/img/team/GenG.png" width=50px height=50px></td><td align=center><img src="/static/img/team/KT.png" width=50px height=50px></td><td align=center><img src="/static/img/team/LSB.png" width=50px height=50px></td><td align=center><img src="/static/img/team/NS.png" width=50px height=50px></td><td align=center><img src="/static/img/team/T1.png" width=50px height=50px></td></tr>
+    <tr><td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{GenG2.0}}</td></tr><td>Win rate</td><td align=center>{{GenG2.1}}</td></tr><tr><td>KDA</td><td>{{GenG2.2}}/{{GenG2.3}}/{{GenG2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{KT2.0}}</td></tr><td>Win rate</td><td align=center>{{KT2.1}}</td></tr><tr><td>KDA</td><td>{{KT2.2}}/{{KT2.3}}/{{KT2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{LSB2.0}}</td></tr><td>Win rate</td><td align=center>{{LSB2.1}}</td></tr><tr><td>KDA</td><td>{{LSB2.2}}/{{LSB2.3}}/{{LSB2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{NS2.0}}</td></tr><td>Win rate</td><td align=center>{{NS2.1}}</td></tr><tr><td>KDA</td><td>{{NS2.2}}/{{NS2.3}}/{{NS2.4}}</td></tr></table></td>
+    <td>
+      <table border=1><tr><td>경기 수</td><td align=center> {{T12.0}}</td></tr><td>Win rate</td><td align=center>{{T12.1}}</td></tr><tr><td>KDA</td><td>{{T12.2}}/{{T12.3}}/{{T12.4}}</td></tr></table></td>
+    </tr>
+  </table></td>
+  </tr>
+
+</table>
+{% endblock %}

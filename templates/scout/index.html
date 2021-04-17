@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load scout_filter %}
+{% block content %}
+<form method='get' action="">
+  {% csrf_token %}
+  <div class=" justify-content-end my-3">
+      <div class="col-4 input-group">
+          <input type="text" name='word' id='word'>
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit">찾기</button>
+          </div>
+      </div>
+  </div>
+</form>
+
+<table width=50% border=0><td></td><td><p class="a">Nickname</a></td><td><p class="a">Team</a></td>
+{% for list in list %}
+<tr><td></td><td><a href="/scout/player/{{list.nickname}}">{{list.nickname}}</a></td><td>{{list.team}}</td></tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}
