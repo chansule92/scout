@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'master$loldb',
-        'USER': 'master',
-        'PASSWORD': 'glemfk12@',
+        'NAME': 'ChocoPi$loldb',
+        'USER': 'ChocoPi',
+        'PASSWORD': '****',
         'HOST': 'ChocoPi.mysql.pythonanywhere-services.com',
         'PORT': 'ChocoPi',
     }
